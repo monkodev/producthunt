@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Producthunt</title>
+  <title>Clon de Product Hunt! ... Monkodev</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -11,6 +11,10 @@
 <div class="alert alert-info"><%= flash[:notice] %></div>
 <% end %>
 
+<% if signed_in? %>
+	<div>Hola <%= current_user.name %> <%= link_to "Salir", logout_path, method: :delete %></div>
+<% end %> 
+	
 <%= yield %>
 
 </body>
