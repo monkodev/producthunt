@@ -5,13 +5,9 @@ Rails.application.routes.draw do
     post 'login', to: 'sessions#create'
     delete 'logout', to: 'sessions#destroy'
 
-    get '/products', to: 'products#index'
-    get '/products/new', to: 'products#new', as: 'new_product'
-    post '/products', to: 'products#create'
-    get '/products/:id' , to: 'products#show' , as: 'product'
-    get '/products/:id/edit', to: 'products#edit' , as: 'edit_product'
-    patch '/products/:id', to: 'products#update'
-    delete '/products/:id', to: 'products#destroy'
+    resources :products do
+      resources :comments, only: [:create]
+    end
     resources :users, only: [:new, :create]
    
   # The priority is based upon order of creation: first created -> highest priority.
