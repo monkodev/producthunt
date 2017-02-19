@@ -9,6 +9,7 @@ class ProductsController < ApplicationController
 	end
 	def create
 		@product=Product.new(product_params)
+		@product.user= current_user
 		if @product.save
 			redirect_to products_path, notice: "El producto fue ingresado exitosamente"
 		else
