@@ -24,7 +24,10 @@ class Product < ActiveRecord::Base
 
 	validates :name, presence: true
 	validates :url, presence: true
+	validates :image, presence: true
+
 	validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
+	validates_attachment_file_name :image, :matches => [/png\Z/, /jpe?g\Z/]
 
 	def voted_by?(user)
 		votes.exists?(user: user)

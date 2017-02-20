@@ -38,4 +38,11 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  
+  Paperclip.options[:command_path] = 'C:\Program Files\ImageMagick-7.0.4-Q16; C:\Program Files (x86)\GnuWin32\bin'
+  
+
+  Paperclip.options[:content_type_mappings] = { jpeg: 'image/jpeg', jpg: 'image/jpeg' }
+
 end
