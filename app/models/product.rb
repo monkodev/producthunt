@@ -24,7 +24,7 @@ class Product < ActiveRecord::Base
 
 	validates :name, presence: true
 	validates :url, presence: true
-	validates :image, presence: true
+	validates :image, presence: false
 
 	validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 	#validates_attachment :image, presence: true,
