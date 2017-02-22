@@ -40,7 +40,7 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
 
   
-  Paperclip.options[:command_path] = 'C:\magick\ImageMagick-7.0.5-Q16; C:\Program Files (x86)\GnuWin32\bin'
+  Paperclip.options[:command_path] = "/usr/local/bin"
   
 
   Paperclip.options[:content_type_mappings] = { jpeg: 'image/jpeg', jpg: 'image/jpeg',png: 'image/jpeg' }
